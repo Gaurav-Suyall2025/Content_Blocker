@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlockScreen">
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/tv_block"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Block"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/person_icon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="26dp"
+            android:layout_toEndOf="@+id/tv_block"
+            android:src="@drawable/person_icon" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="25dp"
+            android:layout_toEndOf="@+id/person_icon"
+            android:src="@drawable/profile_dot" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Content blocking is cheaper\nthan a tea and snack. Buy\nPremium Now!"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativelayout" />
+    
+    <RelativeLayout
+        android:id="@+id/relativelayout2"
+        android:layout_width="325dp"
+        android:layout_height="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/block_background">
+
+        <RelativeLayout
+            android:id="@+id/circular_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/circle_background">
+
+            <ImageView
+                android:id="@+id/block_img"
+                android:layout_width="16dp"
+                android:layout_height="21dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/lock_recy_img" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Content Blocking"
+            android:layout_toEndOf="@+id/circular_icon"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="25dp"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="392dp"
+        android:scrollbars="vertical"
+        android:layout_margin="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/relativelayout2" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteY="668dp"
+        android:background="@drawable/bottom_nav_background"
+        android:elevation="10dp">
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_nev_menu"/>
+
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>
